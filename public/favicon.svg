@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#050505"/>
+  <rect x="1" y="1" width="62" height="62" fill="none" stroke="#f0f0f0" stroke-width="1.5"/>
+  <text
+    x="32"
+    y="22"
+    font-family="'Courier New', Courier, monospace"
+    font-size="15"
+    font-weight="700"
+    fill="#f0f0f0"
+    text-anchor="middle"
+    letter-spacing="1"
+  >Y.V.</text>
+  <line x1="14" y1="28" x2="50" y2="28" stroke="#f0f0f0" stroke-width="0.75" opacity="0.4"/>
+  <text
+    x="32"
+    y="44"
+    font-family="'Courier New', Courier, monospace"
+    font-size="7"
+    fill="#666666"
+    text-anchor="middle"
+    letter-spacing="3"
+  >VIRADIA</text>
+</svg>
