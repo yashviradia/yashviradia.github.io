@@ -8,12 +8,6 @@ const TIMELINE_DATA = [
     type: "year",
     items: [
       {
-        id: "26-1",
-        title: "Obsolescence Tool",
-        desc: "Started December 2025, solid traction from February 2026. Product managers were making decisions from Excel files trying to represent a region → project → product → item hierarchy — with wasted cells, no cross-region visibility, and no what-if capability. Built a simulation UI from scratch: first a static prototype using a graph library, then a full React frontend when filter and search complexity demanded it. Graph, nodes, edges, search-filter, and details panel all have their own JSX files, currently being refactored into TypeScript. Next stage: standardised Excel extraction pipeline → Postgres database → JSON to frontend. The details panel lets product managers simulate What-If scenarios — what happens to other regions if I increase allocation here? Deployment planned on intranet via Kubernetes or VM.",
-        tags: ["React", "TypeScript", "Graph UI", "Simulation", "Postgres"],
-      },
-      {
         id: "26-2",
         title: "Cloud Dashboard",
         desc: "March–June 2026. Team of 5 delivering a fleet analytics dashboard. Users can drag and drop widgets freely onto a canvas and explore data through histograms, line charts, cumulative curves, normal distributions, matrix tables, and raw JSON views — no data science background needed. Frontend in React and TypeScript. Backend split between Java Spring Boot and Python. Data transferred via GraphQL. Deployment with Terraform is secondary priority — the primary focus is test-driven development at every stage.",
@@ -21,9 +15,9 @@ const TIMELINE_DATA = [
       },
       {
         id: "26-3",
-        title: "Praxisprojekt & Bachelorarbeit ZUB Knowledge Graph",
-        desc: "Foundation laid in March 2026 at Hochschule Ostfalia. Praxisprojekt: building a Knowledge Graph of ZUB (Zugbeeinflussung) — the signalling system used in city train networks across Europe. Bachelorarbeit extends this by setting a fine-tuned LLM as the standard — the model already performs 20% better than the existing RAG baseline. The core problem: LLM hallucination in railway system security, where the margin of error is near zero and every answer must be trusted.",
-        tags: ["Knowledge Graph", "LLM", "Fine-tuning", "RAG", "Railway"],
+        title: "Praxisprojekt & Bachelorarbeit",
+        desc: "Praxisprojekt: building a Knowledge Graph. Bachelorarbeit: evaluation of LLM Hallucination.",
+        tags: ["Knowledge Graph", "LLM", "Research"],
       },
     ],
   },
@@ -37,12 +31,6 @@ const TIMELINE_DATA = [
         desc: "Started July 2025 in Braunschweig. First industry role as a working student — a significant step up from retail. The work was real, the stakes were real.",
         tags: ["Work", "Werkstudent", "Industry"],
         isWork: true,
-      },
-      {
-        id: "25-1",
-        title: "Job Crawler",
-        desc: "July–December 2025. Built a live competitor intelligence dashboard. Six containerised scrapers — one per competitor — engineered to be robust against captcha and pagination. Each scraper generated current, historical, and combined CSV files daily. CSVs loaded into a Postgres database with a defined schema, managed by Kubernetes in enterprise cloud. Scrapers run as daily cronjobs, database auto-refreshes a PowerBI dashboard. Fully in production.",
-        tags: ["Web Scraping", "Docker", "Kubernetes", "Postgres", "PowerBI"],
       },
       {
         id: "25-2",
