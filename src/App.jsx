@@ -10,20 +10,20 @@ const TIMELINE_DATA = [
       {
         id: "26-1",
         title: "Obsolescence Tool",
-        desc: "Enterprise-grade tool to detect and manage hardware and software obsolescence, flagging end-of-life components across complex industrial systems.",
-        tags: ["Enterprise", "Tooling", "Analysis"],
+        desc: "Started December 2025, solid traction from February 2026. Product managers were making decisions from Excel files trying to represent a region → project → product → item hierarchy — with wasted cells, no cross-region visibility, and no what-if capability. Built a simulation UI from scratch: first a static prototype using a graph library, then a full React frontend when filter and search complexity demanded it. Graph, nodes, edges, search-filter, and details panel all have their own JSX files, currently being refactored into TypeScript. Next stage: standardised Excel extraction pipeline → Postgres database → JSON to frontend. The details panel lets product managers simulate What-If scenarios — what happens to other regions if I increase allocation here? Deployment planned on intranet via Kubernetes or VM.",
+        tags: ["React", "TypeScript", "Graph UI", "Simulation", "Postgres"],
       },
       {
         id: "26-2",
-        title: "Cloud Dashboard — IAV GmbH",
-        desc: "Analytics dashboard built for IAV GmbH (Ingenieurgesellschaft Auto und Verkehr) to make complex automotive engineering data intuitively accessible. The platform lets end users explore datasets through multiple lenses without any data science background: dynamic curves for signal analysis, normal distribution overlays, histograms for frequency inspection, matrix tables for multi-dimensional comparison, and raw JSON structure views for full data transparency. Built to bridge the gap between raw measurement data and actionable insight.",
-        tags: ["IAV GmbH", "Data Analytics", "Dashboard", "Visualisation", "Cloud"],
+        title: "Cloud Dashboard",
+        desc: "March–June 2026. Team of 5 delivering a fleet analytics dashboard. Users can drag and drop widgets freely onto a canvas and explore data through histograms, line charts, cumulative curves, normal distributions, matrix tables, and raw JSON views — no data science background needed. Frontend in React and TypeScript. Backend split between Java Spring Boot and Python. Data transferred via GraphQL. Deployment with Terraform is secondary priority — the primary focus is test-driven development at every stage.",
+        tags: ["React", "TypeScript", "GraphQL", "Java", "Python", "TDD"],
       },
       {
         id: "26-3",
-        title: "Computer Vision",
-        desc: "Advanced CV pipeline for real-time image recognition and object detection, built on deep learning architectures with transfer learning.",
-        tags: ["CV", "PyTorch", "Deep Learning"],
+        title: "Praxisprojekt & Bachelorarbeit ZUB Knowledge Graph",
+        desc: "Foundation laid in March 2026 at Hochschule Ostfalia. Praxisprojekt: building a Knowledge Graph of ZUB (Zugbeeinflussung) — the signalling system used in city train networks across Europe. Bachelorarbeit extends this by setting a fine-tuned LLM as the standard — the model already performs 20% better than the existing RAG baseline. The core problem: LLM hallucination in railway system security, where the margin of error is near zero and every answer must be trusted.",
+        tags: ["Knowledge Graph", "LLM", "Fine-tuning", "RAG", "Railway"],
       },
     ],
   },
@@ -32,40 +32,61 @@ const TIMELINE_DATA = [
     type: "year",
     items: [
       {
+        id: "25-0",
+        title: "Werkstudent First Industry Role",
+        desc: "Started July 2025 in Braunschweig. First industry role as a working student — a significant step up from retail. The work was real, the stakes were real.",
+        tags: ["Work", "Werkstudent", "Industry"],
+        isWork: true,
+      },
+      {
         id: "25-1",
-        title: "QLoRA on AWS SageMaker — Open Source",
-        desc: "Open-source contribution fine-tuning large language models using Quantized Low-Rank Adaptation (QLoRA) on AWS SageMaker, making efficient LLM training accessible at scale.",
-        tags: ["QLoRA", "AWS SageMaker", "Open Source", "Fine-tuning"],
+        title: "Job Crawler",
+        desc: "July–December 2025. Built a live competitor intelligence dashboard. Six containerised scrapers — one per competitor — engineered to be robust against captcha and pagination. Each scraper generated current, historical, and combined CSV files daily. CSVs loaded into a Postgres database with a defined schema, managed by Kubernetes in enterprise cloud. Scrapers run as daily cronjobs, database auto-refreshes a PowerBI dashboard. Fully in production.",
+        tags: ["Web Scraping", "Docker", "Kubernetes", "Postgres", "PowerBI"],
       },
       {
         id: "25-2",
-        title: "NLP Food Classification — Gradio App",
-        desc: "Transfer learning model paired with a Gradio web app: the user types an image caption and the model classifies whether the described image is food or not food.",
-        tags: ["NLP", "Transfer Learning", "Gradio", "Classification"],
+        title: "AI Agents for C#",
+        desc: "Team of six. Two defined standard rules and process sketch. Two — including me — worked on prompting techniques and evaluated which prompts performed best. Made the case that LLM integration outperforms industry-standard C# tools like Roslyn extractors. Built an AI integration into the repo: when new code is pushed, the LLM reviews it and opens a pull request with suggested improvements — so developers jump straight into fixing, not finding. Two others modelled token economics and cost. Documented and handed to the company, who offered to extend it into a Bachelorarbeit.",
+        tags: ["AI Agents", "C#", "LLM", "Prompting", "Code Review"],
       },
       {
         id: "25-3",
-        title: "PowerBI Data Dashboards",
-        desc: "Four distinct analytics dashboards: Oodles Noodles, Southern Prefecture Restaurant, UFO Sightings, and Yeti Sightings — transforming raw CSV and database data into interactive visual stories.",
-        tags: ["PowerBI", "Data Viz", "Analytics"],
-      },
-      {
-        id: "25-4",
         title: "Camunda Workflow System",
-        desc: "Workflow automation platform using Camunda BPM — Java backend, MySQL Workbench database, and a custom frontend. Models full registration flows for project work, bachelor thesis, and master thesis submissions.",
+        desc: "Built frontend forms using Camunda BPM and Java backend logic with MySQL Workbench database. Modelled complete registration flows for project work, bachelor thesis, and master thesis submissions. Wrote the Java backend and established the database layer to persist form submissions. Project delivered successfully.",
         tags: ["Camunda", "BPM", "Java", "MySQL"],
       },
       {
+        id: "25-4",
+        title: "NLP Food Classification Gradio App",
+        desc: "End-to-end NLP classification pipeline: tokenisation, label encoding, and hyperparameter tuning to classify image captions as food or not food. Optimised inference speed by benchmarking single vs batch inference to analyse latency. Deployed as an interactive Gradio web demo hosted on Hugging Face Spaces. Full training metrics visualised and analysed.",
+        tags: ["NLP", "Transfer Learning", "Gradio", "Hugging Face", "Classification"],
+      },
+      {
         id: "25-5",
-        title: "AI Agents for C# — Brose Sitech",
-        desc: "Proof-of-concept for Brose Sitech: autonomous AI agents integrated into their C# codebase to improve code structure, boost developer productivity, and onboard new team members faster.",
-        tags: ["AI Agents", "C#", ".NET", "Enterprise"],
+        title: "PowerBI Oodles Noodles Dashboard",
+        desc: "Advanced data transformation with Power Query (M-Language), merging and appending multiple CSV sources, and dynamic calendar tables. Star schema relational model with 1:n and 2-way relationships. Complex DAX measures using CALCULATE, Time Intelligence (DATEADD, DATESINPERIOD), ALL, RANKX, and TOPN. Interactive dashboard with KPI Cards, Gauge Charts, Combo Charts, What-if Parameters, Bookmarks, and Drillthrough. Performance-optimised with measure tables and mobile view.",
+        tags: ["PowerBI", "DAX", "Power Query", "Data Modelling"],
       },
       {
         id: "25-6",
-        title: "Job Crawler — Siemens Mobility",
-        desc: "Containerised competitor job-listing scrapers built to be robust against captcha and pagination. Raw CSV output is loaded into a Postgres database, managed via Kubernetes in enterprise cloud. Docker images for each scraper, fully orchestrated — with a PowerBI dashboard as the live frontend.",
-        tags: ["Web Scraping", "Docker", "Kubernetes", "Postgres", "PowerBI"],
+        title: "QLoRA on AWS SageMaker Open Source",
+        desc: "Open-source contribution fine-tuning large language models using Quantized Low-Rank Adaptation (QLoRA) on AWS SageMaker — making efficient LLM training accessible at scale without requiring full-precision compute.",
+        tags: ["QLoRA", "AWS SageMaker", "Open Source", "Fine-tuning", "LLM"],
+      },
+      {
+        id: "25-7",
+        title: "University Transfer TU Braunschweig → Hochschule Ostfalia",
+        desc: "A calculated decision. The part-time job at the supermarket took at least 20 hours a week plus commute — not enough time left to do justice to TU Braunschweig Informatik. Transferred to Hochschule Ostfalia, Wirtschaftsinformatik B.Sc. from February 2025. The goal didn't change — just the path.",
+        tags: ["Education", "Ostfalia", "Wirtschaftsinformatik"],
+        isWork: true,
+      },
+      {
+        id: "25-8",
+        title: "Werkstudent Edeka Supermarket",
+        desc: "Worked as cashier, shelf filler, and at the Sonderstand selling Berliner, Fischbrötchen (Matjes, Lachs, Bismark), and Krustenbraten. Till end of June 2025. Funded the studies. No complaints.",
+        tags: ["Work", "Edeka", "Part-time"],
+        isWork: true,
       },
     ],
   },
@@ -74,29 +95,24 @@ const TIMELINE_DATA = [
     type: "year",
     items: [
       {
-        id: "24-1",
-        title: "Dog Breed Classifier — Computer Vision",
-        desc: "Transfer learning deep learning model trained on 10,000 sample images to predict the breed of a dog. Achieved strong accuracy by leveraging a pre-trained backbone and fine-tuning on the custom dataset.",
-        tags: ["CV", "Transfer Learning", "Deep Learning", "PyTorch"],
-      },
-      {
-        id: "24-2",
-        title: "Bulldozer Price Prediction",
-        desc: "Linear regression machine learning model predicting heavy machinery auction prices by learning patterns from historical sales features — a classic end-to-end ML pipeline.",
-        tags: ["ML", "Regression", "Scikit-learn"],
-      },
-      {
-        id: "24-3",
-        title: "Heart Disease Prediction",
-        desc: "Binary classification model built to predict cardiovascular disease risk from clinical patient data — full pipeline from feature engineering to evaluation.",
-        tags: ["ML", "Classification", "Healthcare"],
-      },
-      {
         id: "24-4",
-        title: "Linux × Raspberry Pi — Project Failure",
-        desc: "An honest entry. A Raspberry Pi project intended to pull real-time data from farming fields. It didn't ship — but it delivered hard lessons in embedded Linux, hardware constraints, and knowing when to pivot.",
+        title: "PowerBI Dashboards UFO, Yeti, Southern Prefecture",
+        desc: "Three analytics dashboards: UFO Sightings, Yeti Sightings, and Southern Prefecture Restaurant — turning raw data into clear visual narratives.",
+        tags: ["PowerBI", "Data Viz", "Analytics"],
+      },
+      {
+        id: "24-5",
+        title: "Linux × Raspberry Pi Project Failure",
+        desc: "Attempted to pull real-time data from farming fields using a Raspberry Pi. Didn't ship. Hard lessons in embedded Linux, hardware constraints, and knowing when to stop. Logged honestly.",
         tags: ["Linux", "Raspberry Pi", "IoT", "Learning"],
         isFail: true,
+      },
+      {
+        id: "24-6",
+        title: "Werkstudent Burger King → Edeka",
+        desc: "Burger King March–August 2024: the stress-to-pay ratio made no sense. Moved to Edeka from September 2024. Also did short-term contracts via Zenjob, including travel to Berlin for work. Simultaneously solved IT problems at university — password resets, system updates, email backups.",
+        tags: ["Work", "Part-time", "Burger King", "Edeka"],
+        isWork: true,
       },
     ],
   },
@@ -106,48 +122,94 @@ const TIMELINE_DATA = [
     items: [
       {
         id: "23-1",
-        title: "HackZurich — Sika LLM Integration",
-        desc: "Built a working prototype at HackZurich for Sika AG — integrating LLM capabilities into their existing enterprise knowledge infrastructure to unlock intelligent document search and automated workflows.",
-        tags: ["Hackathon", "LLM", "Sika", "Prototype"],
+        title: "HackZurich Sika AG Prototype",
+        desc: "Went to HackZurich and built a prototype for Sika AG (Switzerland). Their problem: thousands of product documents, no easy way to recommend the right product to customers. Solution: a chatbot trained on Sika's documents, integrated into their website. The prototype handled document upload and LLM interaction — full document-LLM integration wasn't achieved in the hackathon window, but the concept was proven and the direction was clear.",
+        tags: ["Hackathon", "LLM", "Prototype", "Zurich"],
       },
       {
         id: "23-2",
-        title: "Smartbrain — React Face Recognition App",
-        desc: "Full-stack React web application with face recognition features. Built with component-driven architecture, state management, and a Node.js backend.",
-        tags: ["React", "Face Recognition", "Full Stack"],
-        link: "https://github.com/yashviradia/face_recognition_smartbrain",
+        title: "ML Projects",
+        desc: "Three end-to-end machine learning projects: Dog Breed Classifier using transfer learning on 10,000 images, Bulldozer Price Prediction with linear regression on historical auction data, and Heart Disease Prediction — a binary classification model on clinical patient data. Full pipelines from feature engineering to evaluation.",
+        tags: ["ML", "CV", "Transfer Learning", "Regression", "Classification", "Scikit-learn"],
+      },
+      {
+        id: "23-3",
+        title: "Travels Netherlands & Belgium",
+        desc: "Two days, two countries. Netherlands one day, Belgium the next. First time crossing borders just to explore — a reminder that there's more outside the code editor.",
+        tags: ["Personal", "Travel"],
+        isWork: true,
+      },
+      {
+        id: "23-4",
+        title: "Werkstudent Edeka",
+        desc: "Continued supermarket work through 2023 till August, funding studies and keeping the engine running.",
+        tags: ["Work", "Edeka", "Part-time"],
+        isWork: true,
       },
     ],
   },
   {
-    year: "≤ 2022",
+    year: "2022",
     type: "year",
     items: [
       {
         id: "22-1",
-        title: "React To-Do List",
-        desc: "The first React project. A classic to-do list app — the beginning of a frontend journey and the foundation for everything that followed.",
-        tags: ["React", "JavaScript", "Beginner"],
+        title: "Smartbrain React Face Recognition App",
+        desc: "The majority of 2022 went into building Smartbrain and making it production-ready. React frontend, Node.js backend, PostgreSQL database storing user login data. Users submit an image URL and the app detects human faces via API call. Deployed on Render.io.",
+        tags: ["React", "Node.js", "PostgreSQL", "Face Recognition", "Full Stack"],
+        link: "https://github.com/yashviradia/face_recognition_smartbrain",
       },
       {
         id: "22-2",
-        title: "Foundations Stack",
-        desc: "The stack that built everything: JavaScript, HTML, CSS, Java, and the fundamentals of Data Structures & Algorithms. Every line written was a brick in the wall.",
-        tags: ["JavaScript", "HTML", "CSS", "Java", "DSA"],
+        title: "B.Sc. Informatik TU Braunschweig",
+        desc: "Completed Studienkolleg at Leibniz Universität Hannover in February 2022. Started Bachelor's in Informatik at TU Braunschweig. A new chapter, a harder one.",
+        tags: ["Education", "TU Braunschweig", "Informatik"],
+        isWork: true,
       },
       {
         id: "22-3",
-        title: "Part-time at Netto",
-        desc: "Oct 2021 – Apr 2022. Part-time retail work — building discipline, time management, and the ability to operate under pressure alongside studies.",
-        tags: ["Work", "Retail", "Part-time"],
+        title: "Werkstudent Edeka",
+        desc: "Started at Edeka supermarket alongside the bachelor's degree. The funding mechanism for everything that followed.",
+        tags: ["Work", "Edeka", "Part-time"],
+        isWork: true,
+      },
+    ],
+  },
+  {
+    year: "2021",
+    type: "year",
+    items: [
+      {
+        id: "21-1",
+        title: "Studienkolleg Leibniz Universität Hannover",
+        desc: "Started Studienkolleg in February 2021 — the gateway to German university. Studied hard, passed, cleared the path to the Bachelor's.",
+        tags: ["Education", "Studienkolleg", "Hannover"],
         isWork: true,
       },
       {
-        id: "22-4",
-        title: "UPS Logistics",
-        desc: "January 2021. Part-time logistics work at UPS — loading and unloading trucks with parcels, gaining first-hand experience in large-scale supply chain operations.",
-        tags: ["Work", "Logistics", "Part-time"],
+        id: "21-2",
+        title: "Foundations JavaScript, HTML, CSS, Java, DSA",
+        desc: "While studying, built the technical foundation: JavaScript, HTML, CSS, Java, Data Structures and Algorithms. First React project — a to-do list. Every line written was a brick.",
+        tags: ["JavaScript", "HTML", "CSS", "Java", "React", "DSA"],
+      },
+      {
+        id: "21-3",
+        title: "UPS Logistics → Water Filter Factory → Netto",
+        desc: "January 2021: loading and unloading trucks at UPS. Then a stint at a water filter manufacturing facility. October 2021–February 2022: Netto supermarket. Corona times. Shelves to fill, hours to grind, studies to pass. It all ran in parallel.",
+        tags: ["Work", "UPS", "Netto", "Logistics", "Part-time"],
         isWork: true,
+      },
+    ],
+  },
+  {
+    year: "2018 — 2020",
+    type: "year",
+    items: [
+      {
+        id: "18-1",
+        title: "Self-Teaching Computer Science",
+        desc: "Before any formal education — learned programming independently. Computer science fundamentals, logic, problem solving. The curiosity came first, the degree came later.",
+        tags: ["Self-taught", "CS Fundamentals", "Programming"],
       },
     ],
   },
@@ -233,6 +295,11 @@ const styles = `
     background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.008) 3px, rgba(255,255,255,0.008) 4px);
   }
 
+  /* ── BINARY RAIN ── */
+  #binary-canvas {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.18;
+  }
+
   /* ── NAVBAR ── */
   .nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -264,14 +331,6 @@ const styles = `
     justify-content: center; align-items: center; text-align: center;
     position: relative; overflow: hidden;
   }
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-    background-size: 72px 72px;
-    transition: transform 0.1s linear;
-  }
   .hero-inner { position: relative; z-index: 2; padding: 0 24px; }
   .hero-eye {
     font-size: 0.68rem; letter-spacing: 0.5em; color: var(--grey);
@@ -289,12 +348,23 @@ const styles = `
     line-height: 0.95; margin-bottom: 48px;
     letter-spacing: -0.02em;
     -webkit-text-stroke: 1px var(--white); color: transparent;
+    animation: flicker 6s infinite;
+  }
+  @keyframes flicker {
+    0%   { opacity: 1; }
+    92%  { opacity: 1; }
+    93%  { opacity: 0.1; }
+    94%  { opacity: 1; }
+    96%  { opacity: 0.3; }
+    97%  { opacity: 1; }
+    98%  { opacity: 0.05; }
+    99%  { opacity: 1; }
+    100% { opacity: 1; }
   }
   .hero-meta {
     display: flex; gap: 32px; justify-content: center;
     font-size: 0.68rem; letter-spacing: 0.25em; color: var(--grey); margin-bottom: 72px;
   }
-  .hero-meta span::before { content: "// "; }
   .hero-scroll {
     display: flex; flex-direction: column; align-items: center; gap: 10px;
     animation: bob 2s ease-in-out infinite;
@@ -375,7 +445,6 @@ const styles = `
   }
   .card-row:hover .card::before { background: rgba(255,255,255,0.3); }
 
-  .card-num { font-size: 0.58rem; color: var(--grey); letter-spacing: 0.2em; margin-bottom: 10px; }
   .card-title {
     font-family: var(--serif); font-size: 0.95rem; font-weight: 700;
     letter-spacing: 0.04em; line-height: 1.3; margin-bottom: 10px;
@@ -428,6 +497,56 @@ const styles = `
   }
 `;
 
+// ── Binary Rain ──
+function BinaryRain() {
+  const canvasRef = useRef(null);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    let animId;
+    const fontSize = 13;
+    let cols, drops, speeds;
+
+    function init() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      cols = Math.floor(canvas.width / fontSize);
+      drops = Array.from({ length: cols }, () => Math.random() * -100);
+      speeds = Array.from({ length: cols }, () => 0.3 + Math.random() * 0.7);
+    }
+
+    function draw() {
+      ctx.fillStyle = "rgba(5,5,5,0.18)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < drops.length; i++) {
+        const y = drops[i] * fontSize;
+        // bright white lead character
+        ctx.fillStyle = "#ffffff";
+        ctx.font = `bold ${fontSize}px 'Courier New', monospace`;
+        ctx.fillText(Math.random() > 0.5 ? "1" : "0", i * fontSize, y);
+        // dimmer trail character slightly above
+        ctx.fillStyle = "rgba(255,255,255,0.35)";
+        ctx.font = `${fontSize}px 'Courier New', monospace`;
+        ctx.fillText(Math.random() > 0.5 ? "1" : "0", i * fontSize, y - fontSize * 2);
+        ctx.fillText(Math.random() > 0.5 ? "1" : "0", i * fontSize, y - fontSize * 4);
+
+        drops[i] += speeds[i];
+        if (y > canvas.height && Math.random() > 0.97) {
+          drops[i] = 0;
+          speeds[i] = 0.3 + Math.random() * 0.7;
+        }
+      }
+      animId = requestAnimationFrame(draw);
+    }
+
+    init();
+    draw();
+    window.addEventListener("resize", init);
+    return () => { cancelAnimationFrame(animId); window.removeEventListener("resize", init); };
+  }, []);
+  return <canvas ref={canvasRef} id="binary-canvas" />;
+}
+
 // ── Navbar ──
 function Navbar() {
   return (
@@ -435,7 +554,7 @@ function Navbar() {
       <div className="nav-logo">Yash <em>Viradia</em></div>
       <div className="nav-status">
         <span className="status-dot" />
-        <span>PORTFOLIO_ACTIVE</span>
+        <span>EST. 2018</span>
       </div>
     </nav>
   );
@@ -443,18 +562,11 @@ function Navbar() {
 
 // ── Hero ──
 function Hero() {
-  const [scrollY, setScrollY] = useState(0);
   const typed = useTypewriter("YASH VIRADIA", 80, true);
-  useEffect(() => {
-    const h = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", h, { passive: true });
-    return () => window.removeEventListener("scroll", h);
-  }, []);
   return (
     <section className="hero">
-      <div className="hero-grid" style={{ transform: `translateY(${scrollY * 0.28}px)` }} />
       <div className="hero-inner">
-        <p className="hero-eye">// PORTFOLIO_TIMELINE.LOG — EST. 2021</p>
+        <p className="hero-eye">EST. 2018 . STILL COMPILING</p>
         <div className="hero-title">{typed}<span className="blink">_</span></div>
         <div className="hero-title-outline">BUILD LOG</div>
         <div className="hero-meta">
@@ -489,12 +601,11 @@ function ProjectCard({ item, index, side }) {
     <div className={`card-row ${side}`}>
       <div className="dot" />
       <div ref={ref} className={`card ${inView ? "show" : ""}`}>
-        <div className="card-num">// {String(index).padStart(3, "0")}</div>
         <div className="card-title">{item.title}</div>
         <div className="card-desc">{item.desc}</div>
         {item.link && (
           <a className="card-link" href={item.link} target="_blank" rel="noopener noreferrer">
-            VIEW ON GITHUB →
+            VIEW ON GITHUB
           </a>
         )}
         <div className="card-tags">
@@ -548,7 +659,7 @@ function Footer() {
     <footer className="footer">
       <div>YASH_VIRADIA // BUILD_LOG // END_OF_RECORD<span className="blink">█</span></div>
       <div style={{ marginTop: 12, fontSize: "0.6rem", opacity: 0.4 }}>
-        2021 — {new Date().getFullYear()} &nbsp;·&nbsp; ALL ENTRIES LOGGED
+        2018 — {new Date().getFullYear()} &nbsp;·&nbsp; ALL ENTRIES LOGGED
       </div>
     </footer>
   );
@@ -559,6 +670,7 @@ export default function App() {
   return (
     <>
       <style>{styles}</style>
+      <BinaryRain />
       <div id="noise" />
       <div id="scan" />
       <Navbar />
